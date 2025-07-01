@@ -1,4 +1,4 @@
-import TagCard from "@/components/list-cards/TagCard";
+import TagCard from "@/components/cardOrder/TagCard";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   Accordion,
@@ -7,8 +7,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useState } from "react";
-import DescriptionCard from "./DescriptionCard";
-import DescriptionOpenCard from "./DescriptionOpenCard";
+import DescriptionCard from "../cardOrder/DescriptionCard";
+import DescriptionOpenCard from "../cardOrder/DescriptionOpenCard";
 
 
 export default function Cards() {

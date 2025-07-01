@@ -1,4 +1,4 @@
-import Cards from "./Сards";
+import Cards from "../card/Сards";
 
 export default function ListCards(){
     return(

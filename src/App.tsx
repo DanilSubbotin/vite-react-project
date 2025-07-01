@@ -1,5 +1,5 @@
 import './styles/index.css'
-import ListCards from './components/list-cards/ListCards'
+import ListCards from './components/pages/ListCards'
 import { Sidebar } from './components/sidebar/Sidebar'
 import { Button } from './components/ui/button'
 import { GoChevronLeft } from "react-icons/go";

@@ -10,13 +10,27 @@ import { useState } from "react";
 import DescriptionCard from "../cardOrder/DescriptionCard";
 import DescriptionOpenCard from "../cardOrder/DescriptionOpenCard";
 
+interface CardItem {
+  id: number;
+  name: string;
+  details: {
+    article: string,
+    price: number,
+    quantity: number,
+  };
+}
 
-export default function Cards() {
+interface CardProps {
+  item: CardItem;
+}
+
+
+export default function Cards({ item }: CardProps) {
   const [open, setOpen] = useState<string | undefined>(undefined);
   return (
-    <div className="w-103 relative font-display">
+    <div className="relative font-display">
       <Card>
-        <TagCard />
+        {item.id && <TagCard id={item.id} />}
         <CardHeader>
           <Accordion
             type="single"
@@ -26,13 +40,12 @@ export default function Cards() {
           >
             <AccordionItem value="product">
               <AccordionTrigger>
-                Аптечка универсальная для оказания первой медицинской
-                помощи (ID: 57779)
+                {item.name} (ID: 57779)
               </AccordionTrigger>
               <AccordionContent>
-                <DescriptionOpenCard />
+                <DescriptionOpenCard details={item.details} />
               </AccordionContent>
-              {open !== "product" && <DescriptionCard />}
+              {open !== "product" && <DescriptionCard details={item.details} />}
             </AccordionItem>
           </Accordion>
         </CardHeader>

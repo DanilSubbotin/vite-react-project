@@ -10,6 +10,7 @@ import { useState } from "react";
 import DescriptionCard from "../cardOrder/DescriptionCard";
 import DescriptionOpenCard from "../cardOrder/DescriptionOpenCard";
 
+
 interface CardItem {
   id: number;
   name: string;
@@ -18,6 +19,7 @@ interface CardItem {
     price: number,
     quantity: number,
   };
+  get totalPrice(): number; 
 }
 
 interface CardProps {
@@ -39,13 +41,13 @@ export default function Cards({ item }: CardProps) {
             onValueChange={setOpen}
           >
             <AccordionItem value="product">
-              <AccordionTrigger>
+              <AccordionTrigger className="font-bold">
                 {item.name} (ID: 57779)
               </AccordionTrigger>
               <AccordionContent>
-                <DescriptionOpenCard details={item.details} />
+                <DescriptionOpenCard details={item.details} totalPrice={item.totalPrice}/>
               </AccordionContent>
-              {open !== "product" && <DescriptionCard details={item.details} />}
+              {open !== "product" && <DescriptionCard details={item.details} totalPrice={item.totalPrice}/>}
             </AccordionItem>
           </Accordion>
         </CardHeader>

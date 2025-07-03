@@ -1,20 +1,27 @@
+
 export const MockCardsData = [
     {
         id: 1,
         name: "Tortilla Chips",
         details: {
             article: "44087-1225",
-            price: 299,
+            price: 300,
             quantity: 1,
         },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
+        }
     },
     {
         id: 2,
         name: "Garlic Herb Seasoning",
         details: {
             article: "16590-023",
-            price: 199,
+            price: 200,
             quantity: 5,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -22,8 +29,11 @@ export const MockCardsData = [
         name: "Chicken Breasts",
         details: {
             article: "55154-1345",
-            price: 999,
+            price: 1000,
             quantity: 5,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -31,8 +41,11 @@ export const MockCardsData = [
         name: "Lemon Garlic Shrimp",
         details: {
             article: "48951-1053",
-            price: 899,
+            price: 900,
             quantity: 3,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -40,8 +53,11 @@ export const MockCardsData = [
         name: "Personal Blender with Travel Lid",
         details: {
             article: "36987-3198",
-            price: 3499,
+            price: 3500,
             quantity: 3,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -49,8 +65,11 @@ export const MockCardsData = [
         name: "Cheddar Cheese Slices",
         details: {
             article: "55154-6163",
-            price: 349,
+            price: 350,
             quantity: 4,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -58,8 +77,11 @@ export const MockCardsData = [
         name: "Infrared Space Heater",
         details: {
             article: "41520-180",
-            price: 9999,
+            price: 10000,
             quantity: 4,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -67,8 +89,11 @@ export const MockCardsData = [
         name: "Gardening Gloves with Claws",
         details: {
             article: "53645-1210",
-            price: 2499,
+            price: 2500,
             quantity: 4,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -76,8 +101,11 @@ export const MockCardsData = [
         name: "Motion Sensor Light",
         details: {
             article: "68084-202",
-            price: 1999,
+            price: 2000,
             quantity: 3,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -85,8 +113,11 @@ export const MockCardsData = [
         name: "Customizable Photo Calendar",
         details: {
             article: "54868-5010",
-            price: 1999,
+            price: 2000,
             quantity: 3,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -94,8 +125,11 @@ export const MockCardsData = [
         name: "Inspirational Wall Art",
         details: {
             article: "48951-1025",
-            price: 2499,
+            price: 2500,
             quantity: 2,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -103,8 +137,11 @@ export const MockCardsData = [
         name: "Plant Pot Drip Trays",
         details: {
             article: "54868-5829",
-            price: 999,
+            price: 1000,
             quantity: 4,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -112,8 +149,11 @@ export const MockCardsData = [
         name: "Trainers with Mesh Inserts",
         details: {
             article: "0143-9769",
-            price: 6999,
+            price: 7000,
             quantity: 1,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -121,8 +161,11 @@ export const MockCardsData = [
         name: "Herbed Couscous",
         details: {
             article: "49158-503",
-            price: 249,
+            price: 250,
             quantity: 2,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -130,8 +173,11 @@ export const MockCardsData = [
         name: "Diced Tomatoes (canned)",
         details: {
             article: "55289-606",
-            price: 149,
+            price: 150,
             quantity: 3,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -139,8 +185,11 @@ export const MockCardsData = [
         name: "Artisan Bread",
         details: {
             article: "63354-871",
-            price: 459,
+            price: 460,
             quantity: 4,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -148,8 +197,11 @@ export const MockCardsData = [
         name: "Travel Makeup Organizer",
         details: {
             article: "0143-9757",
-            price: 2599,
+            price: 2600,
             quantity: 3,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -157,8 +209,11 @@ export const MockCardsData = [
         name: "Savory Oatmeal",
         details: {
             article: "33261-646",
-            price: 249,
+            price: 250,
             quantity: 3,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -166,8 +221,11 @@ export const MockCardsData = [
         name: "Chocolate Mint Cookies",
         details: {
             article: "0378-0373",
-            price: 229,
+            price: 230,
             quantity: 4,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     },
     {
@@ -175,8 +233,11 @@ export const MockCardsData = [
         name: "Brown Rice",
         details: {
             article: "0093-5124",
-            price: 179,
+            price: 180,
             quantity: 3,
+        },
+        get totalPrice() {
+            return this.details.price * this.details.quantity
         }
     }
 ]

@@ -5,11 +5,12 @@ interface DescriptionCardProps {
         price: number,
         quantity: number,
     };
+    totalPrice: number;
 }
 
 
 
-export default function DescriptionOpenCard({details}: DescriptionCardProps) {
+export default function DescriptionOpenCard({details, totalPrice}: DescriptionCardProps) {
     const blockDescription = 'flex gap-2 items-baseline justify-between';
     return (
         <div className="w-full flex flex-col gap-2">
@@ -36,7 +37,7 @@ export default function DescriptionOpenCard({details}: DescriptionCardProps) {
             <div className={blockDescription}>
                 <p className="font-bold text-base text-[#2C2C2C] font-display inline-block">Итого&nbsp;(с&nbsp;наценкой)</p>
                 <div className="border-gray-200 w-full border h-px"></div>
-                <div className="font-display font-bold text-base text-[#2C2C2C] inline-block">46&nbsp;400₽</div>
+                <div className="font-display font-bold text-base text-[#2C2C2C] inline-block">{totalPrice.toLocaleString('ru-RU')}₽</div>
             </div>
         </div>
     )

@@ -11,7 +11,8 @@ import DescriptionCard from "../cardOrder/DescriptionCard";
 import DescriptionOpenCard from "../cardOrder/DescriptionOpenCard";
 
 
-interface CardItem {
+
+export interface CardItem {
   id: number;
   name: string;
   details: {
@@ -19,7 +20,7 @@ interface CardItem {
     price: number,
     quantity: number,
   };
-  get totalPrice(): number; 
+  get totalPrice(): number;
 }
 
 interface CardProps {
@@ -30,8 +31,7 @@ interface CardProps {
 export default function Cards({ item }: CardProps) {
   const [open, setOpen] = useState<string | undefined>(undefined);
   return (
-    <div className="relative font-display">
-      <Card>
+      <Card className="relative font-display">
         {item.id && <TagCard id={item.id} />}
         <CardHeader>
           <Accordion
@@ -45,14 +45,14 @@ export default function Cards({ item }: CardProps) {
                 {item.name} (ID: 57779)
               </AccordionTrigger>
               <AccordionContent>
-                <DescriptionOpenCard details={item.details} totalPrice={item.totalPrice}/>
+                <DescriptionOpenCard details={item.details} totalPrice={item.totalPrice} />
               </AccordionContent>
-              {open !== "product" && <DescriptionCard details={item.details} totalPrice={item.totalPrice}/>}
+              {open !== "product" && <DescriptionCard details={item.details} totalPrice={item.totalPrice} />}
             </AccordionItem>
           </Accordion>
         </CardHeader>
         <CardContent></CardContent>
       </Card>
-    </div>
+
   );
 }

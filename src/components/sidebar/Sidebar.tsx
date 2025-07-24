@@ -5,10 +5,14 @@ import CurrencySidebar from "./SidebarComponents/CurrencySidebar";
 import DownloadSidebar from "./SidebarComponents/DownloadSidebar";
 import UsernameSidebar from "./SidebarComponents/UsernameSidebar";
 
-export function Sidebar() {
+interface SidebarProps {
+    allPrice: number;
+}
+
+export function Sidebar({allPrice}: SidebarProps) {
     return (
         <Card className="max-w-103 p-5 font-display gap-5 h-max">
-            <OrderSidebar/>
+            <OrderSidebar allPrice = {allPrice}/>
             <NacenkaSidebar/>
             <CurrencySidebar/>
             <DownloadSidebar/>

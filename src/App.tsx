@@ -1,11 +1,14 @@
 import './styles/index.css'
-import { InfiniteScrollItems } from './components/pages/OrderPage'
-import { MockCardsData } from './components/card/mockData'
+import { OrderPage } from './components/pages/OrderPage'
+// import { MockCardsData } from './components/card/mockData'
 
 
 
 export default function App() {
   return (
-    <InfiniteScrollItems MockCardsData={MockCardsData}/>
+    <div className='app'>
+      <OrderPage />
+    </div>
+
   )
 }

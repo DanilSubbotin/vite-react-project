@@ -9,73 +9,61 @@ import { useInView } from "react-intersection-observer";
 import axios from "axios";
 
 
-interface ApiResponse {
-    products: CardItem[];
-    totalProducts: number;
-    hasMore: boolean;
-}
-
-const ITEMS_PER_LOAD = 4;
-
 
 export const OrderPage = () => {
     const [items, setItems] = useState<CardItem[]>([]);
+    const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
-    const [totalProducts, setTotalProducts] = useState(0);
-    const pageRef = useRef(1);
     const loadingRef = useRef(false);
+    const limit = 4;
+
+
 
     const allPrice = items.reduce((sum, item) => {
         return sum + (item.price * item.quantity);
     }, 0);
 
 
-    const { ref, inView } = useInView({
+    const [lastProductRef, inView] = useInView({
         threshold: 0.1,
         triggerOnce: false,
+        initialInView: true,
     });
 
 
     const LoadMoreItems = useCallback(async () => {
         if (loadingRef.current || !hasMore) return;
 
+
         loadingRef.current = true;
         setIsLoading(true);
 
         try {
-            const response = await axios.get<ApiResponse>("https://mocki.io/v1/2814c68f-eab9-4131-897a-91c407cecdc8", {
+            const response = await axios.get("https://688410ce745306380a377d87.mockapi.io/products", {
                 params: {
-                    page: pageRef.current,
-                    limit: ITEMS_PER_LOAD,
+                    page: page,
+                    limit: limit,
                 }
             });
-            setItems(prev => [...prev, ...response.data.products])
-            setTotalProducts(response.data.totalProducts);
-            setHasMore(response.data.hasMore);
-            pageRef.current += 1;
-
-
+            const newItems = response.data;
+            setItems(prev => [...prev, ...newItems]);
+            setHasMore(newItems.length === limit);
+            setPage(prev => prev + 1);
         } catch (error) {
             console.error("Возникла ошибка:", error);
         } finally {
             setIsLoading(false);
+            loadingRef.current = false;
         }
-    }, [hasMore]);
+    }, [page, isLoading, hasMore, limit]);
 
 
     useEffect(() => {
-        if (items.length === 1) {
+        if (inView && !loadingRef.current) {
             LoadMoreItems();
         }
-    }, []);
-
-
-    useEffect(() => {
-        if (inView && !loadingRef.current && hasMore) {
-            LoadMoreItems();
-        }
-    }, [inView, hasMore, LoadMoreItems]);
+    }, [inView, LoadMoreItems, isLoading]);
 
 
     return (
@@ -85,7 +73,7 @@ export const OrderPage = () => {
                     <Button variant="ghost" className="px-5 py-3 font-normal text-base flex gap-[10px] items-center"><GoChevronLeft /> Назад</Button>
                     <div className='flex gap-3 items-baseline'>
                         <h2 className='font-[Play] font-bold text-2xl'>Заказ на Пролетарская 89Ф</h2>
-                        <p className='font-normal text-xs text-gray-400'>{totalProducts} товаров</p>
+                        <p className='font-normal text-xs text-gray-400'>50 товаров</p>
                     </div>
                 </div>
             </div>
@@ -94,16 +82,15 @@ export const OrderPage = () => {
             </div>
             <div className='flex justify-center gap-5'>
                 <div className="grid grid-cols-[repeat(2,22vw)] gap-5 items-start">
-                    {items.map((item) => (
-                        <Cards key={item.id} item={item} />
+                    {items.map((item, index) => (
+                        <div key={`${item.id}-${index}`} ref={index === items.length - 1 ? lastProductRef : null}>
+                            <Cards item={item} />
+                        </div>
                     ))}
-
-                    <div ref={ref}>
-                        {isLoading && <div>Загрузка...</div>}
-                        {!hasMore && items.length > 0 && <div>Все товары загружены.</div>}
-                    </div>
+                    {isLoading && <div>Загрузка...</div>}
+                    {!hasMore && items.length > 0 && <div>Все товары загружены.</div>}
                 </div>
-                <Sidebar allPrice = {allPrice}/>
+                <Sidebar allPrice={allPrice} />
             </div>
         </div>
     );

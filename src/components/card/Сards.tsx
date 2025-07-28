@@ -17,8 +17,7 @@ export interface CardItem {
   name: string;
   article: string,
   price: number,
-  quantity: number,
-  get totalPrice(): number;
+  quantity: number
 }
 
 interface CardProps {
@@ -40,7 +39,7 @@ export default function Cards({ item }: CardProps) {
         >
           <AccordionItem value="product">
             <AccordionTrigger className="font-bold">
-              {item.name} (ID: 57779)
+              {item.name} (ID: {item.id})
             </AccordionTrigger>
             <AccordionContent>
               <DescriptionOpenCard article={item.article}

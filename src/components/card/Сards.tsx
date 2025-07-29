@@ -39,7 +39,7 @@ export default function Cards({ item }: CardProps) {
         >
           <AccordionItem value="product">
             <AccordionTrigger className="font-bold">
-              {item.name} (ID: {item.id})
+              {item.name} (ID: {item.id}-{item.article})
             </AccordionTrigger>
             <AccordionContent>
               <DescriptionOpenCard article={item.article}

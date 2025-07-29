@@ -17,7 +17,7 @@ export const OrderPage = () => {
     const limit = 4;
 
     const [lastProductRef, inView] = useInView({
-        threshold: 0.1,
+        threshold: 0.5,
         triggerOnce: false,
         initialInView: true,
     });

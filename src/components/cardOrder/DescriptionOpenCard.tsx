@@ -32,7 +32,7 @@ export default function DescriptionOpenCard({ article, price, quantity}: Descrip
                 <div className="font-display font-normal text-sm text-[#2C2C2C] inline-block">{quantity}&nbsp;шт</div>
             </div>
             <div className={blockDescription}>
-                <p className="font-bold text-base text-[#2C2C2C] font-display inline-block">Итого&nbsp;(с&nbsp;наценкой)</p>
+                <p className="font-bold text-base text-[#2C2C2C] font-display inline-block">Итого</p>
                 <div className="border-gray-200 w-full border h-px"></div>
                 <div className="font-display font-bold text-base text-[#2C2C2C] inline-block">{totalPrice.toLocaleString('ru-RU')}₽</div>
             </div>

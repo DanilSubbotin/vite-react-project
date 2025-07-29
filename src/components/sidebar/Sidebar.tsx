@@ -13,7 +13,7 @@ export function Sidebar({allPrice}: SidebarProps) {
     return (
         <Card className="max-w-103 p-5 font-display gap-5 h-max">
             <OrderSidebar allPrice = {allPrice}/>
-            <NacenkaSidebar/>
+            <NacenkaSidebar allPrice = {allPrice}/>
             <CurrencySidebar/>
             <DownloadSidebar/>
             <UsernameSidebar/>

@@ -1,14 +1,11 @@
 
-// import { MockCardsData } from "@/components/card/mockData";
-
-// const totalSum = MockCardsData.reduce((sum, item) => sum + item.totalPrice, 0);
-
-interface SidebarProps {
+interface OrderSidebarProps {
     allPrice: number;
 }
 
-export function OrderSidebar({allPrice}: SidebarProps){
-    return(
+export function OrderSidebar({ allPrice }: OrderSidebarProps) {
+
+    return (
         <div className="flex flex-col gap-3">
             <h3 className="font-[Play] font-bold text-xl">Стоимость заказа</h3>
             <div className="flex gap-3">

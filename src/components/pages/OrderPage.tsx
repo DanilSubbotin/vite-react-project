@@ -7,8 +7,15 @@ import { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import axios from "axios";
 
+interface OtherDataProps {
+    title: string;
+    totalProducts: string;
+    allPrice: number;
+}
+
 export const OrderPage = () => {
     const [items, setItems] = useState<CardItem[]>([]);
+    const [otherData, setOtherData] = useState<OtherDataProps>();
     const [isLoading, setIsLoading] = useState(false);
     const [hasMore, setHasMore] = useState(true);
 
@@ -22,7 +29,6 @@ export const OrderPage = () => {
         initialInView: true,
     });
 
-    const allPrice = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
     useEffect(() => {
         const fetchItems = async () => {
@@ -31,15 +37,19 @@ export const OrderPage = () => {
             loadingRef.current = true;
             setIsLoading(true);
             try {
-                const response = await axios.get("https://688410ce745306380a377d87.mockapi.io/products", {
+                const productsResponse = await axios.get("https://688410ce745306380a377d87.mockapi.io/products", {
                     params: {
                         page: pageRef.current,
                         limit,
                     },
                 });
-                const newItems: CardItem[] = response.data;
+                const otherDataResponse = await axios.get("https://mocki.io/v1/773a1c86-8246-4f64-9634-01478fbf62f8");
+
+                const newItems: CardItem[] = productsResponse.data;
+                const otherData: OtherDataProps = otherDataResponse.data;
 
                 setItems(prev => [...prev, ...newItems]);
+                setOtherData(otherData);
                 setHasMore(newItems.length === limit);
                 if (newItems.length === limit) {
                     pageRef.current += 1;
@@ -72,8 +82,8 @@ export const OrderPage = () => {
                         <GoChevronLeft /> Назад
                     </Button>
                     <div className="flex gap-3 items-baseline">
-                        <h2 className="font-[Play] font-bold text-2xl">Заказ на Пролетарская 89Ф</h2>
-                        <p className="font-normal text-xs text-gray-400">50 товаров</p>
+                        <h2 className="font-[Play] font-bold text-2xl">{otherData?.title}</h2>
+                        <p className="font-normal text-xs text-gray-400">{otherData?.totalProducts} товаров</p>
                     </div>
                 </div>
             </div>
@@ -92,7 +102,7 @@ export const OrderPage = () => {
                     {isLoading && <div>Загрузка...</div>}
                     {!hasMore && items.length > 0 && <div>Все товары загружены.</div>}
                 </div>
-                <Sidebar allPrice={allPrice} />
+                <Sidebar allPrice={otherData?.allPrice ?? 0} />
             </div>
         </div>
     );

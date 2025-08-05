@@ -2,6 +2,8 @@
 import ReactCountryFlag from "react-country-flag";
 import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { MdErrorOutline } from "react-icons/md";
 
 interface CurrencyValues {
     CNY: number;
@@ -27,14 +29,27 @@ export default function CurrencySidebar() {
     });
 
     const [displayPrices, setDisplayPrices] = useState<CurrencyValues>(initialRates);
+    const [error, setError] = useState<string | null>(null);
+
+    const validateCurrencyMarkup = (value: number): string | null => {
+        if (value < 0) return "Наценка не может быть отрицательной";
+        if (value > 1000) return "Максимальная наценка - 1000%";
+        return null;
+    }
 
 
     const currencyMarkupChangeHandler = (currency: keyof CurrencyValues, value: string) => {
         const numValue = value === '' ? 0 : parseFloat(value);
-        setMarkup(prev => ({
-            ...prev,
-            [currency]: numValue,
-        }));
+        const validationError = validateCurrencyMarkup(numValue);
+
+        setError(validationError);
+
+        if (!validationError) {
+            setMarkup(prev => ({
+                ...prev,
+                [currency]: numValue,
+            }));
+        }
     };
 
     useEffect(() => {
@@ -67,10 +82,14 @@ export default function CurrencySidebar() {
                     </div>
                 </div>
                 <div className="flex gap-3">
-                    <Input className={InputStyle} value={markup.CNY || ''} onChange={(e) => currencyMarkupChangeHandler('CNY', e.target.value)} placeholder="Наценка" />
-                    <Input className={InputStyle} value={markup.EUR || ''} onChange={(e) => currencyMarkupChangeHandler('EUR', e.target.value)} placeholder="Наценка" />
-                    <Input className={InputStyle} value={markup.USD || ''} onChange={(e) => currencyMarkupChangeHandler('USD', e.target.value)} placeholder="Наценка" />
+                    <Input className={InputStyle} type="number" value={markup.CNY || ''} onChange={(e) => currencyMarkupChangeHandler('CNY', e.target.value)} placeholder="Наценка" />
+                    <Input className={InputStyle} type="number" value={markup.EUR || ''} onChange={(e) => currencyMarkupChangeHandler('EUR', e.target.value)} placeholder="Наценка" />
+                    <Input className={InputStyle} type="number" value={markup.USD || ''} onChange={(e) => currencyMarkupChangeHandler('USD', e.target.value)} placeholder="Наценка" />
                 </div>
+                {error && <Alert variant="destructive">
+                    <MdErrorOutline/>
+                    <AlertDescription>{error}</AlertDescription>
+                </Alert>}
             </div>
         </div>
     );

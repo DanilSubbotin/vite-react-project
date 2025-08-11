@@ -1,9 +1,10 @@
 
 import ReactCountryFlag from "react-country-flag";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/shared/ui/input";
 import { useEffect, useState } from "react";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Alert, AlertDescription } from "@/shared/ui/alert";
 import { MdErrorOutline } from "react-icons/md";
+
 
 interface CurrencyValues {
     CNY: number;
@@ -58,7 +59,7 @@ export default function CurrencySidebar() {
             EUR: initialRates.EUR * (1 + markup.EUR / 100),
             USD: initialRates.USD * (1 + markup.USD / 100),
         });
-    }, [markup, initialRates]);
+    }, [markup]);
 
     return (
         <div className="font-display flex flex-col gap-3">

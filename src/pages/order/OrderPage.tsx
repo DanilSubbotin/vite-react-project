@@ -1,6 +1,6 @@
-import Cards, { type CardItem } from "../card/Сards";
-import { Sidebar } from "../sidebar/Sidebar";
-import { Button } from "../ui/button";
+import Cards, { type CardItem } from "@/features/order-cards/ui/Сard";
+import { Sidebar } from "@/widgets/sidebar/Sidebar";
+import { Button } from "@/shared/ui/button";
 import { GoChevronLeft } from "react-icons/go";
 import { FaRegEdit } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";

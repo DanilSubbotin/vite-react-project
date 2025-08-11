@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/shared/ui/button";
 import { GoFile } from "react-icons/go";
 
 export default function DownloadSidebar() {

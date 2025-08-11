@@ -1,14 +1,14 @@
-import TagCard from "@/components/cardOrder/TagCard";
-import { Card, CardContent } from "@/components/ui/card";
+import TagCard from "@/features/order-cards/ui/TagCard";
+import { Card, CardContent } from "@/shared/ui/card";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/shared/ui/accordion";
 import { useState } from "react";
-import DescriptionCard from "../cardOrder/DescriptionCard";
-import DescriptionOpenCard from "../cardOrder/DescriptionOpenCard";
+import DescriptionCard from "@/features/order-cards/ui/DescriptionCard";
+import DescriptionOpenCard from "@/features/order-cards/ui/DescriptionOpenCard";
 
 
 

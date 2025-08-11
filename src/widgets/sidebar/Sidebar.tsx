@@ -1,9 +1,9 @@
-import { Card } from "../ui/card";
-import { NacenkaSidebar } from "./SidebarComponents/NacenkaSidebar";
-import { OrderSidebar } from "./SidebarComponents/OrderSidebar";
-import CurrencySidebar from "./SidebarComponents/CurrencySidebar";
-import DownloadSidebar from "./SidebarComponents/DownloadSidebar";
-import UsernameSidebar from "./SidebarComponents/UsernameSidebar";
+import { Card } from "../../shared/ui/card";
+import { NacenkaSidebar } from "@/features/sidebar-features/ui/NacenkaSidebar";
+import { OrderSidebar } from "@/features/sidebar-features/ui/OrderSidebar";
+import CurrencySidebar from "@/features/sidebar-features/ui/CurrencySidebar";
+import DownloadSidebar from "@/features/sidebar-features/ui/DownloadSidebar";
+import UsernameSidebar from "@/features/sidebar-features/ui/UsernameSidebar";
 import { useState } from "react";
 
 interface SidebarProps {

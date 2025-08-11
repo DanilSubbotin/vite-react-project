@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "@/shared/ui/button";
+import { Input } from "@/shared/ui/input";
 import React, { useState } from "react";
-import { Alert, AlertTitle } from "@/components/ui/alert";
+import { Alert, AlertTitle } from "@/shared/ui/alert";
 import { MdErrorOutline } from "react-icons/md";
 import axios from "axios";
 import { FaRegCheckCircle } from "react-icons/fa";

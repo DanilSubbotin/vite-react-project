@@ -1,7 +1,4 @@
-
-interface TagProps{
-    id: number;
-}
+import { type TagProps } from "@/entities/types/orderPage/card";
 
 
 export default function TagCard({id}: TagProps) {

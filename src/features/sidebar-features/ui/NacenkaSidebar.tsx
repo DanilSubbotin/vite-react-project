@@ -5,13 +5,7 @@ import { Alert, AlertTitle } from "@/shared/ui/alert";
 import { MdErrorOutline } from "react-icons/md";
 import axios from "axios";
 import { FaRegCheckCircle } from "react-icons/fa";
-
-interface OrderSidebarProps {
-    allPrice: number;
-    orderId?: string;
-    onPriceUpdate: (price: number) => void;
-}
-
+import { type OrderSidebarProps, type PriceUpdateData } from "@/entities/types/orderPage/sidebar";
 
 
 export function NacenkaSidebar({ allPrice, onPriceUpdate }: OrderSidebarProps) {
@@ -63,11 +57,13 @@ export function NacenkaSidebar({ allPrice, onPriceUpdate }: OrderSidebarProps) {
             const updatedPrice = newPrice;
             onPriceUpdate(updatedPrice);
 
-            await axios.put("https://688410ce745306380a377d87.mockapi.io/otherData/1", {
+            const updatedData: PriceUpdateData = {
                 priceWithMarkup: newPrice,
                 markupPercentage: markupPercentage === '' ? 0 : markupPercentage,
-                updatedAt: new Date().toISOString()
-            });
+                updatedAt: new Date().toISOString(),
+            }
+
+            await axios.put("https://688410ce745306380a377d87.mockapi.io/otherData/1", updatedData);
 
             setSuccessMessage('Данные успешно обновлены!');
             setTimeout(() => setSuccessMessage(''), 2000);

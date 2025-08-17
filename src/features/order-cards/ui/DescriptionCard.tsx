@@ -1,10 +1,4 @@
-
-
-interface DescriptionCardProps {
-    article: string,
-    price: number,
-    quantity: number,
-}
+import { type DescriptionCardProps } from "@/entities/types/orderPage/card";
 
 
 export default function DescriptionCard({ article, price, quantity}: DescriptionCardProps) {

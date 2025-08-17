@@ -1,8 +1,4 @@
-
-interface OrderSidebarProps {
-    allPrice: number;
-    priceWithMarkup: number;
-}
+import { type OrderSidebarProps } from "@/entities/types/orderPage/sidebar";
 
 export function OrderSidebar({ allPrice, priceWithMarkup }: OrderSidebarProps) {
 

@@ -9,20 +9,7 @@ import {
 import { useState } from "react";
 import DescriptionCard from "@/features/order-cards/ui/DescriptionCard";
 import DescriptionOpenCard from "@/features/order-cards/ui/DescriptionOpenCard";
-
-
-
-export interface CardItem {
-  id: number;
-  name: string;
-  article: string,
-  price: number,
-  quantity: number
-}
-
-interface CardProps {
-  item: CardItem;
-}
+import { type CardProps } from "@/entities/types/orderPage/card";
 
 
 export default function Cards({ item }: CardProps) {

@@ -4,13 +4,8 @@ import { Input } from "@/shared/ui/input";
 import { useEffect, useState } from "react";
 import { Alert, AlertDescription } from "@/shared/ui/alert";
 import { MdErrorOutline } from "react-icons/md";
+import { type CurrencyValues } from "@/entities/types/orderPage/sidebar";
 
-
-interface CurrencyValues {
-    CNY: number;
-    EUR: number;
-    USD: number;
-}
 
 export default function CurrencySidebar() {
     const InputStyle = "p-4 h-10 text-base";

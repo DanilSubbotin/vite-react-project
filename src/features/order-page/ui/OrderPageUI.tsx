@@ -4,6 +4,7 @@ import { Button } from '@/shared/ui/button';
 import { GoChevronLeft } from 'react-icons/go';
 import { FaRegEdit } from 'react-icons/fa';
 import type { CardItem, OtherDataProps } from '@/app/api/orders';
+import { Header } from '@/widgets/header/Header';
 
 
 interface orderPageUIProps {
@@ -24,6 +25,7 @@ export const OrderPageUI = ({
 }: orderPageUIProps) => {
     return (
         <div className="flex flex-col items-center">
+            <Header/>
             <div className="min-w-319 flex justify-between">
                 <div>
                     <Button variant="ghost" className="px-5 py-3 font-normal text-base flex gap-[10px] items-center">

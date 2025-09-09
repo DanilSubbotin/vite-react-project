@@ -26,6 +26,8 @@ export const useOrderPage = () => {
             loadingRef.current = true;
             setIsLoading(true);
             try {
+                await new Promise(resolve => setTimeout(resolve, 500));
+
                 const [productsResponse, otherDataResponse] = await Promise.all([
                     fetchProducts(pageRef.current, limit),
                     fetchOtherData(),

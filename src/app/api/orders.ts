@@ -24,5 +24,5 @@ export const fetchProducts = (page: number, limit: number) => {
 };
 
 export const fetchOtherData = () => {
-    return axios.get<OtherDataProps>("https://mocki.io/v1/773a1c86-8246-4f64-9634-01478fbf62f8");
+    return axios.get<OtherDataProps>("https://mocki.io/v1/45b7458f-2339-44cc-9532-71853c690f20");
 };

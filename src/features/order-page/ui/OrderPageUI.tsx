@@ -24,7 +24,7 @@ export const OrderPageUI = ({
     hasMore,
 }: orderPageUIProps) => {
     return (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center bg-bg-document">
             <Header/>
             <div className="min-w-319 flex justify-between">
                 <div>
@@ -38,7 +38,7 @@ export const OrderPageUI = ({
                 </div>
             </div>
             <div className="w-319 flex justify-end">
-                <Button variant="ghost" className="px-5 py-3 font-normal text-base flex gap-[10px] items-center">
+                <Button variant="ghost" className="text-text-secondary-color px-5 py-3 font-normal text-base flex gap-[10px] items-center">
                     <FaRegEdit className="text-text-secondary-color" /> Редактировать заказ
                 </Button>
             </div>

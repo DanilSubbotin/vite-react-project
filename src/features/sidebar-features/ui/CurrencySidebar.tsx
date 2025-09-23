@@ -9,7 +9,7 @@ import { type CurrencyValues } from "@/entities/types/orderPage/sidebar";
 
 export default function CurrencySidebar() {
     const InputStyle = "p-4 h-10 text-base";
-    const CurrencyStyle = "rounded-lg bg-gray-200 px-2 py-1 text-xs flex gap-1 items-center justify-center flex-1";
+    const CurrencyStyle = "rounded-lg bg-bg-blocks px-2 py-1 text-xs flex gap-1 items-center justify-center flex-1";
 
 
     const initialRates: CurrencyValues = {
@@ -60,7 +60,7 @@ export default function CurrencySidebar() {
         <div className="font-display flex flex-col gap-3">
             <div className="flex flex-col">
                 <h4 className="font-bold text-base">Цены в валютах</h4>
-                <h6 className="font-normal text-xs text-gray-400">Добавьте к стоимости валюты свою наценку в рублях</h6>
+                <h6 className="font-normal text-xs text-text-secondary-color">Добавьте к стоимости валюты свою наценку в рублях</h6>
             </div>
             <div className="flex flex-col gap-3">
                 <div className="flex gap-3">

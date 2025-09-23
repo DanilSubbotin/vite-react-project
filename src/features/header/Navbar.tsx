@@ -10,16 +10,16 @@ export function Navbar() {
         <NavigationMenu className="flex gap-4">
             <NavigationMenuList>
                 <NavigationMenuItem>
-                    <NavigationMenuLink href="/" className="text-gray-400 hover:bg-gray-200 active:bg-gray-200 px-5 py-3 rounded-2xl">804</NavigationMenuLink>
+                    <NavigationMenuLink href="/" className="text-text-secondary-color hover:bg-bg-blocks active:bg-bg-blocks px-5 py-3 rounded-2xl">804</NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <NavigationMenuLink href="/" className="text-gray-400 hover:bg-gray-200 active:bg-gray-200 px-5 py-3 rounded-2xl">Прайсы</NavigationMenuLink>
+                    <NavigationMenuLink href="/" className="text-text-secondary-color hover:bg-bg-blocks active:bg-bg-blocks px-5 py-3 rounded-2xl">Прайсы</NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <NavigationMenuLink href="/" className="text-gray-400 hover:bg-gray-200 active:bg-gray-200 px-5 py-3 rounded-2xl">Технические спецификации</NavigationMenuLink>
+                    <NavigationMenuLink href="/" className="text-text-secondary-color hover:bg-bg-blocks active:bg-bg-blocks px-5 py-3 rounded-2xl">Технические спецификации</NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <NavigationMenuLink href="/" className="text-gray-400 hover:bg-gray-200 active:bg-gray-200 px-5 py-3 rounded-2xl">Поставщики</NavigationMenuLink>
+                    <NavigationMenuLink href="/" className="text-text-secondary-color hover:bg-bg-blocks active:bg-bg-blocks px-5 py-3 rounded-2xl">Поставщики</NavigationMenuLink>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>

@@ -81,10 +81,10 @@ export function NacenkaSidebar({ allPrice, onPriceUpdate }: OrderSidebarProps) {
             <div className="flex justify-between">
                 <div className="flex flex-col">
                     <h4 className="font-bold text-base">Наценка</h4>
-                    <h6 className="font-normal text-xs text-gray-400">Укажите наценку на весь прайс-лист</h6>
+                    <h6 className="font-normal text-xs text-text-secondary-color">Укажите наценку на весь прайс-лист</h6>
                 </div>
                 <div className="flex flex-col items-end">
-                    <h6 className="font-normal text-xs text-gray-400">Новая цена</h6>
+                    <h6 className="font-normal text-xs text-text-secondary-color">Новая цена</h6>
                     <h4 className="font-bold text-base">{newPrice.toLocaleString('ru-RU')}₽</h4>
                 </div>
             </div>
@@ -98,7 +98,7 @@ export function NacenkaSidebar({ allPrice, onPriceUpdate }: OrderSidebarProps) {
                 <AlertTitle>{successMessage}</AlertTitle>
             </Alert>}
             <div className="flex gap-3">
-                <Button onClick={handleSave} disabled={!!error || isSaving} className="bg-[#0077FF] px-5 py-3 rounded-2xl font-display font-normal text-base flex-1">{isSaving ? 'Сохранение...' : 'Сохранить'}</Button>
+                <Button onClick={handleSave} disabled={!!error || isSaving} className="bg-bg-button px-5 py-3 rounded-2xl font-display font-normal text-base flex-1">{isSaving ? 'Сохранение...' : 'Сохранить'}</Button>
                 <Button variant="ghost" onClick={calculateNewPrice} disabled={!!error} className="px-5 py-3 rounded-2xl font-display font-normal text-base flex-1">Рассчитать цену</Button>
             </div>
         </div>

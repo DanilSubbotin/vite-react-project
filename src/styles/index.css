@@ -7,7 +7,40 @@
 
 @theme {
   --font-display: "Roboto", sans-serif;
+
+
+  --color-bg-document: var(--background-document);
+  --color-bg-cards: var(--background-cards);
+  --color-bg-blocks: var(--background-blocks);
+  --color-bg-button: var(--background-button);
+  --color-bg-price-currency: var(--background-price-currency);
+  --color-text-color: var(--text-color);
+  --color-text-secondary-color: var(--text-secondary-color);
+  --color-text-color-currency: var(--text-color-currency);
 }
+
+/* Светлая тема */
+:root, html[data-theme='light'] {
+  --background-document: #ffffff;
+  --background-cards: #f3f4f6;
+  --background-blocks: #e5e7eb;
+  --background-button: #0077ff;
+  --background-price-currency: #e6f9ee;
+  --text-color: #2C2C2C;
+  --text-secondary-color: #99a1af;
+  --text-color-currency: #2f6850;
+}
+
+/* Темная тема */
+/*html[data-theme='dark'] {
+  --background-document: #111111;
+  --background-cards: #292929;
+  --background-blocks: #383838;
+  --background-button: #5ea1ed;
+  --background-price-currency: #2b4141;
+  --text-color: #ffffff;
+  --text-color-currency: #21bc5f;
+}*/
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);

@@ -33,13 +33,13 @@ export const OrderPageUI = ({
                     </Button>
                     <div className="flex gap-3 items-baseline">
                         <h2 className="font-[Play] font-bold text-2xl">{otherData?.title}</h2>
-                        <p className="font-normal text-xs text-gray-400">{otherData?.totalProducts} товаров</p>
+                        <p className="font-normal text-xs text-text-secondary-color">{otherData?.totalProducts} товаров</p>
                     </div>
                 </div>
             </div>
             <div className="w-319 flex justify-end">
                 <Button variant="ghost" className="px-5 py-3 font-normal text-base flex gap-[10px] items-center">
-                    <FaRegEdit className="text-gray-500" /> Редактировать заказ
+                    <FaRegEdit className="text-text-secondary-color" /> Редактировать заказ
                 </Button>
             </div>
             <div className="flex justify-center gap-5">

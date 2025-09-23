@@ -11,17 +11,21 @@ import { GoPerson } from "react-icons/go";
 
 export function Header() {
     return (
-        <Card className="w-325 flex flex-row p-5 rounded-[20px] justify-between my-6 border border-gray-100">
+        <Card className="w-325 flex flex-row p-5 rounded-[20px] justify-between my-6 border border-bg-cards">
             <img src={logoMaksoft} alt="Логотип компании Максофт" className="object-scale-down" />
             <Navbar />
             <div className="flex flex-row gap-4">
-                <Button variant="secondary" size="icon" className="flex rounded-full p-5 gap-5 hover:bg-gray-200 cursor-pointer">
+                <Button variant="secondary" size="icon" className="flex rounded-full p-5 gap-5 hover:bg-bg-blocks cursor-pointer">
                     <AiOutlineMoon />
                 </Button>
-                <Button variant="secondary" size="icon" className="flex rounded-full p-5 gap-5 hover:bg-gray-200 cursor-pointer">
+                <Button variant="secondary" size="icon" className="relative flex rounded-full p-5 gap-5 hover:bg-bg-blocks cursor-pointer">
+                    <span className="absolute top-[2px] left-[28px] flex size-2">
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#cc3341] opacity-75"></span>
+                        <span className="relative inline-flex size-2 rounded-full bg-[#cc3341]"></span>
+                    </span>
                     <GoBell />
                 </Button>
-                <Button variant="secondary" size="icon" className="flex rounded-full p-5 gap-5 hover:bg-gray-200 cursor-pointer">
+                <Button variant="secondary" size="icon" className="flex rounded-full p-5 gap-5 hover:bg-bg-blocks cursor-pointer">
                     <GoPerson />
                 </Button>
             </div>

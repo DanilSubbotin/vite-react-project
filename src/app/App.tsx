@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { OtherPage } from '@/pages/otherPage/otherPage';
 import { Prices } from '@/pages/prices/Prices';
 import { Suppliers } from '@/pages/suppliers/Suppliers';
+import { routes } from '@/app/routes/routes'
 
 
 
@@ -16,10 +17,10 @@ export default function App() {
         <Header />
         <main>
           <Routes>
-            <Route path='/other-page' element={<OtherPage />}></Route>
-            <Route path='/prices' element={<Prices />}></Route>
-            <Route path='/' element={<OrderPage />}></Route>
-            <Route path='/suppliers' element={<Suppliers />}></Route>
+            <Route path={routes.otherPage} element={<OtherPage />}></Route>
+            <Route path={routes.prices} element={<Prices />}></Route>
+            <Route path={routes.technicalSpecs} element={<OrderPage />}></Route>
+            <Route path={routes.suppliers} element={<Suppliers />}></Route>
           </Routes>
         </main>
       </div>

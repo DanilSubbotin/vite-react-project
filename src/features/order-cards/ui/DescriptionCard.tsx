@@ -3,6 +3,7 @@ import { type DescriptionCardProps } from "@/entities/types/orderPage/card";
 
 export default function DescriptionCard({ article, price, quantity }: DescriptionCardProps) {
     const totalPrice = price * quantity;
+
     return (
         <div className="flex flex-col gap-3">
             <div className="flex gap-3">
